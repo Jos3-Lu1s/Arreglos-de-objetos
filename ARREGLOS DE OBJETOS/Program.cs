@@ -27,7 +27,7 @@ namespace ARREGLOS_DE_OBJETOS
                     Console.WriteLine("INGRESA UN DATO NUMÉRICO VALIDO: ");
                 }
             }
-
+            Arreglos Consultas = new Arreglos(cantidad);
             do
             {
                 Console.WriteLine("╔═╗╦═╗╦═╗╔═╗╔═╗╦  ╔═╗╔═╗  ╔╦╗╔═╗  ╔═╗╔╗  ╦╔═╗╔╦╗╔═╗╔═╗");
@@ -56,6 +56,14 @@ namespace ARREGLOS_DE_OBJETOS
                 switch (control)
                 {
                     case 1:
+                        try
+                        {
+                            Consultas.Insert();
+                        }
+                        catch (Exception)
+                        {
+                            Console.WriteLine("LIMITE");
+                        }
                         break;
                     case 2:
                         break;
