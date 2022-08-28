@@ -107,7 +107,7 @@ namespace ARREGLOS_DE_OBJETOS
                             Consultas.Select();
                             Console.Write("ACTUALIZAR NOMBRE: ");
                             text = Console.ReadLine();
-                            Consultas.Update(id, text, menu-1);
+                            Consultas.Update(id, text, menu - 1);
                         }
                         else if (id == 2)
                         {
@@ -154,6 +154,48 @@ namespace ARREGLOS_DE_OBJETOS
                         Console.Clear();
                         break;
                     case 5:
+                        Console.WriteLine("[1]_PERMUTAR POR ÍNDICE");
+                        Console.WriteLine("[2]_PERMUTAR POR NOMBRE");
+                        Console.Write("SELECCIONE UNA OPCIÓN: ");
+                        try
+                        {
+                            menu = Convert.ToInt32(Console.ReadLine());
+                        }
+                        catch (Exception)
+                        {
+                            Console.Clear();
+                            Console.WriteLine("INGRESA UN DATO VALIDO");
+                        }
+                        if (menu == 1)
+                        {
+                            Console.WriteLine("PERMUTAR POR ÍNDICE");
+                            Consultas.Select();
+                            Console.Write("INGRESE EL 1ER ÍNDICE A PERMUTAR: ");
+                            int ind1 = Convert.ToInt32(Console.ReadLine());
+                            Console.Write("INGRESE EL 2DO ÍNDICE A PERMUTAR: ");
+                            int ind2 = Convert.ToInt32(Console.ReadLine());
+                            Consultas.Exchange(ind1-1, ind2-1);
+                            Consultas.Select();
+                        }
+                        if (menu == 2)
+                        {
+                            Console.WriteLine("PERMUTAR POR NOMBRE");
+                            Consultas.Select();
+                            Console.Write("INGRESE EL 1ER NOMBRE: ");
+                            string nm1 = Console.ReadLine();
+                            Console.Write("INGRESE EL 2DO NOMBRE: ");
+                            string nm2 = Console.ReadLine();
+                            Consultas.Exchange(Consultas.GetId(nm1), Consultas.GetId(nm2));
+                            Consultas.Select();
+                        }
+                        else
+                        {
+                            Console.WriteLine("INGRESA UN DATO VALIDO");
+                        }
+                        Console.WriteLine("PRESIONE CUALQUIER TECLA PARA CONTINUAR");
+                        Console.ReadKey();
+                        Console.Clear();
+
                         break;
                     case 6:
                         break;

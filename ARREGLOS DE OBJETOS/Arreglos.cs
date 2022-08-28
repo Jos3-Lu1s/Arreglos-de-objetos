@@ -99,5 +99,25 @@ namespace ARREGLOS_DE_OBJETOS
                 Alumnos[indice].AnioNacimiento = Convert.ToDateTime(valor);
             }
         }
+
+        public void Exchange(int indice1, int indice2)
+        {
+            Persona aux = Alumnos[indice1];
+            Alumnos[indice1] = Alumnos[indice2];
+            Alumnos[indice2] = aux;
+        }
+
+        public int GetId(string nombre)
+        {
+            int p = 0;
+            for (int i = 0; i < Alumnos.Length; i++)
+            {
+                if (Alumnos[i].Nombre == nombre)
+                {
+                    p = i;
+                }
+            }
+            return p;
+        }
     }
 }
