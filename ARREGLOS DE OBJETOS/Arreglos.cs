@@ -124,5 +124,10 @@ namespace ARREGLOS_DE_OBJETOS
         {
             return Math.Round(Alumnos[id].IMC(), 2);
         }
+
+        public int Age(int id)
+        {
+            return DateTime.Now.Year - Alumnos[id].AnioNacimiento.Year;
+        }
     }
 }

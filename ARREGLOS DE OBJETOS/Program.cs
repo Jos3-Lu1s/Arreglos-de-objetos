@@ -207,6 +207,14 @@ namespace ARREGLOS_DE_OBJETOS
                         Console.Clear();
                         break;
                     case 7:
+                        Console.WriteLine("EDAD");
+                        Consultas.Select();
+                        Console.Write("INGRESA EL ÍNDICE: ");
+                        menu = Convert.ToInt32(Console.ReadLine());
+                        Console.WriteLine("LA EDAD ES DE: "+ Consultas.Age(menu-1).ToString());
+                        Console.WriteLine("PRESIONE CUALQUIER TECLA PARA CONTINUAR");
+                        Console.ReadKey();
+                        Console.Clear();
                         break;
                     case 8:
                         break;
