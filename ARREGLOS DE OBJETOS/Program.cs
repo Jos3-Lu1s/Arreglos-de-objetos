@@ -174,7 +174,7 @@ namespace ARREGLOS_DE_OBJETOS
                             int ind1 = Convert.ToInt32(Console.ReadLine());
                             Console.Write("INGRESE EL 2DO ÍNDICE A PERMUTAR: ");
                             int ind2 = Convert.ToInt32(Console.ReadLine());
-                            Consultas.Exchange(ind1-1, ind2-1);
+                            Consultas.Exchange(ind1 - 1, ind2 - 1);
                             Consultas.Select();
                         }
                         if (menu == 2)
@@ -195,9 +195,16 @@ namespace ARREGLOS_DE_OBJETOS
                         Console.WriteLine("PRESIONE CUALQUIER TECLA PARA CONTINUAR");
                         Console.ReadKey();
                         Console.Clear();
-
                         break;
                     case 6:
+                        Console.WriteLine("IMC");
+                        Consultas.Select();
+                        Console.Write("INGRESA EL ÍNDICE: ");
+                        menu = Convert.ToInt32(Console.ReadLine());
+                        Console.WriteLine("EL ÍNDICE DE MASA CORPORAL ES: " + Consultas.GetIMC(menu - 1).ToString());
+                        Console.WriteLine("PRESIONE CUALQUIER TECLA PARA CONTINUAR");
+                        Console.ReadKey();
+                        Console.Clear();
                         break;
                     case 7:
                         break;

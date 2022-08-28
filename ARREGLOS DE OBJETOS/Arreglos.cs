@@ -119,5 +119,10 @@ namespace ARREGLOS_DE_OBJETOS
             }
             return p;
         }
+
+        public double GetIMC(int id)
+        {
+            return Math.Round(Alumnos[id].IMC(), 2);
+        }
     }
 }
