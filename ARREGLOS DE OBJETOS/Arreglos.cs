@@ -35,8 +35,8 @@ namespace ARREGLOS_DE_OBJETOS
                 string dato = Console.ReadLine();
                 if (dato.Length == 10)
                 {
-                    Alumnos[elementos].AñoNacimiento = new DateTime();
-                    Alumnos[elementos].AñoNacimiento = Convert.ToDateTime(dato);
+                    Alumnos[elementos].AnioNacimiento = new DateTime();
+                    Alumnos[elementos].AnioNacimiento = Convert.ToDateTime(dato);
                     break;
                 }
                 else
@@ -58,18 +58,46 @@ namespace ARREGLOS_DE_OBJETOS
             Console.ForegroundColor = ConsoleColor.Black;
             for (int i = 0; i < elementos; i++)
             {
-                Console.WriteLine("[{0}]_{1}{2}{3}{4}{5}{6}", con = con+1, Alumnos[i].Nombre.PadRight(15), Alumnos[i].Apellido_p.PadRight(20), Alumnos[i].Apellido_m.PadRight(20), Alumnos[i].Peso.ToString().PadRight(10), Alumnos[i].Estatura.ToString().PadRight(11), Alumnos[i].AñoNacimiento.Year.ToString().PadRight(21));
+                Console.WriteLine("[{0}]_{1}{2}{3}{4}{5}{6}", con = con + 1, Alumnos[i].Nombre.PadRight(15), Alumnos[i].Apellido_p.PadRight(20), Alumnos[i].Apellido_m.PadRight(20), Alumnos[i].Peso.ToString().PadRight(10), Alumnos[i].Estatura.ToString().PadRight(11), Alumnos[i].AnioNacimiento.Year.ToString().PadRight(21));
             }
             Console.ResetColor();
         }
 
         public void Delete(int p)
         {
-            for (int i = p; i < elementos-1; i++)
+            for (int i = p; i < elementos - 1; i++)
             {
                 Alumnos[i] = Alumnos[i + 1];
             }
             Alumnos[--elementos].ToString();
+        }
+
+        public void Update(int seleccion, string valor, int indice)
+        {
+            if (seleccion == 1)
+            {
+                Alumnos[indice].Nombre = valor;
+            }
+            else if (seleccion == 2)
+            {
+                Alumnos[indice].Apellido_p = valor;
+            }
+            else if (seleccion == 3)
+            {
+                Alumnos[indice].Apellido_m = valor;
+            }
+            else if (seleccion == 4)
+            {
+                Alumnos[indice].Peso = Convert.ToDouble(valor);
+            }
+            else if (seleccion == 5)
+            {
+                Alumnos[indice].Estatura = Convert.ToDouble(valor);
+            }
+            else if (seleccion == 6)
+            {
+                Alumnos[indice].AnioNacimiento = Convert.ToDateTime(valor);
+            }
         }
     }
 }

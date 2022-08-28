@@ -12,11 +12,14 @@ namespace ARREGLOS_DE_OBJETOS
         {
             int cantidad = 0;
             int control = 0;
+            int menu = 0;
+            int id = 0;
+            string text;
             while (true)
             {
                 try
                 {
-                    Console.WriteLine("INGRESA LA CANTIDAD DE DATOS: ");
+                    Console.Write("INGRESA LA CANTIDAD DE DATOS: ");
                     cantidad = Convert.ToInt32(Console.ReadLine());
                     Console.Clear();
                     break;
@@ -42,7 +45,7 @@ namespace ARREGLOS_DE_OBJETOS
                 Console.WriteLine("[7]_EDAD");
                 Console.WriteLine("[8]_ORDENAR");
                 Console.WriteLine("[9]_SALIR");
-                Console.WriteLine("SELECCIONE UNA OPCIÓN:  ");
+                Console.Write("SELECCIONE UNA OPCIÓN:  ");
 
                 try
                 {
@@ -76,7 +79,7 @@ namespace ARREGLOS_DE_OBJETOS
                         break;
                     case 3:
                         Consultas.Select();
-                        Console.WriteLine("INGRESE EL ÍNDICE A ELIMINAR");
+                        Console.Write("INGRESE EL ÍNDICE A ELIMINAR: ");
                         int indice = Convert.ToInt32(Console.ReadLine());
                         Consultas.Delete(indice - 1);
                         Consultas.Select();
@@ -86,6 +89,69 @@ namespace ARREGLOS_DE_OBJETOS
                         Console.Clear();
                         break;
                     case 4:
+                        Console.WriteLine("ACTUALIZAR");
+                        Consultas.Select();
+
+                        Console.WriteLine("INGRESE EL ÍNDICE DE LA FILA");
+                        menu = Convert.ToInt32(Console.ReadLine());
+                        Console.WriteLine("[1]_ACTUALIZAR NOMBRE");
+                        Console.WriteLine("[2]_ACTUALIZAR APELLIDO PATERNO");
+                        Console.WriteLine("[3]_ACTUALIZAR APELLIDO MATERNO");
+                        Console.WriteLine("[4]_ACTUALIZAR PESO");
+                        Console.WriteLine("[5]_ACTUALIZAR ESTATURA");
+                        Console.WriteLine("[6]_ACTUALIZAR FECHA DE NACIMIENTO");
+                        Console.Write("INGRESA UNA OPCIÓN: ");
+                        id = Convert.ToInt32(Console.ReadLine());
+                        if (id == 1)
+                        {
+                            Consultas.Select();
+                            Console.Write("ACTUALIZAR NOMBRE: ");
+                            text = Console.ReadLine();
+                            Consultas.Update(id, text, menu-1);
+                        }
+                        else if (id == 2)
+                        {
+                            Consultas.Select();
+                            Console.Write("ACTUALIZAR APELLIDO PATERNO: ");
+                            text = Console.ReadLine();
+                            Consultas.Update(id, text, menu - 1);
+                        }
+                        else if (id == 3)
+                        {
+                            Consultas.Select();
+                            Console.Write("ACTUALIZAR APELLIDO MATERNO: ");
+                            text = Console.ReadLine();
+                            Consultas.Update(id, text, menu - 1);
+                        }
+                        else if (id == 4)
+                        {
+                            Consultas.Select();
+                            Console.Write("ACTUALIZAR PESO: ");
+                            text = Console.ReadLine();
+                            Consultas.Update(id, text, menu - 1);
+                        }
+                        else if (id == 5)
+                        {
+                            Consultas.Select();
+                            Console.Write("ACTUALIZAR ESTATURA: ");
+                            text = Console.ReadLine();
+                            Consultas.Update(id, text, menu - 1);
+                        }
+                        else if (id == 6)
+                        {
+                            Consultas.Select();
+                            Console.Write("ACTUALIZAR FECHA DE NACIMIENTO: ");
+                            text = Console.ReadLine();
+                            Consultas.Update(id, text, menu - 1);
+                        }
+                        else
+                        {
+                            Console.WriteLine("INGRESA UN DATO VALIDO");
+                        }
+                        Consultas.Select();
+                        Console.WriteLine("PRESIONE CUALQUIER TECLA PARA CONTINUAR");
+                        Console.ReadKey();
+                        Console.Clear();
                         break;
                     case 5:
                         break;

@@ -13,7 +13,7 @@ namespace ARREGLOS_DE_OBJETOS
         public string Apellido_m { get; set; }
         public double Peso { get; set; }
         public double Estatura { get; set; }
-        public DateTime AñoNacimiento { get; set; }
+        public DateTime AnioNacimiento { get; set; }
         
         public double IMC()
         {
