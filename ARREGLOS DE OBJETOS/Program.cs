@@ -64,8 +64,15 @@ namespace ARREGLOS_DE_OBJETOS
                         {
                             Console.WriteLine("LIMITE");
                         }
+                        Console.WriteLine("PRESIONE CUALQUIER TECLA PARA CONTINUAR");
+                        Console.ReadKey();
+                        Console.Clear();
                         break;
                     case 2:
+                        Consultas.Select();
+                        Console.WriteLine("PRESIONE CUALQUIER TECLA PARA CONTINUAR");
+                        Console.ReadKey();
+                        Console.Clear();
                         break;
                     case 3:
                         break;
