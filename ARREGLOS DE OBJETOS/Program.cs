@@ -75,6 +75,15 @@ namespace ARREGLOS_DE_OBJETOS
                         Console.Clear();
                         break;
                     case 3:
+                        Consultas.Select();
+                        Console.WriteLine("INGRESE EL ÍNDICE A ELIMINAR");
+                        int indice = Convert.ToInt32(Console.ReadLine());
+                        Consultas.Delete(indice - 1);
+                        Consultas.Select();
+
+                        Console.WriteLine("PRESIONE CUALQUIER TECLA PARA CONTINUAR");
+                        Console.ReadKey();
+                        Console.Clear();
                         break;
                     case 4:
                         break;

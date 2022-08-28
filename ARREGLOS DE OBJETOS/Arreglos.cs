@@ -62,5 +62,14 @@ namespace ARREGLOS_DE_OBJETOS
             }
             Console.ResetColor();
         }
+
+        public void Delete(int p)
+        {
+            for (int i = p; i < elementos-1; i++)
+            {
+                Alumnos[i] = Alumnos[i + 1];
+            }
+            Alumnos[--elementos].ToString();
+        }
     }
 }
