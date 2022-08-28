@@ -129,5 +129,113 @@ namespace ARREGLOS_DE_OBJETOS
         {
             return DateTime.Now.Year - Alumnos[id].AnioNacimiento.Year;
         }
+
+        public void SortByText(int opcion, int orden)
+        {
+            int p;
+            if (opcion == 1)
+            {
+                for (int i = 0; i < elementos; i++)
+                {
+                    for (int j = 0; j < elementos; j++)
+                    {
+                        p = string.Compare(Alumnos[i].Nombre, Alumnos[j].Nombre);
+                        if (p == orden)
+                        {
+                            Exchange(i, j);
+                        }
+                    }
+                }
+            }
+            if (opcion == 2)
+            {
+                for (int i = 0; i < elementos; i++)
+                {
+                    for (int j = 0; j < elementos; j++)
+                    {
+                        p = string.Compare(Alumnos[i].Apellido_p, Alumnos[j].Apellido_p);
+                        if (p == orden)
+                        {
+                            Exchange(i, j);
+                        }
+                    }
+                }
+            }
+            if (opcion == 3)
+            {
+                for (int i = 0; i < elementos; i++)
+                {
+                    for (int j = 0; j < elementos; j++)
+                    {
+                        p = string.Compare(Alumnos[i].Apellido_m, Alumnos[j].Apellido_m);
+                        if (p == orden)
+                        {
+                            Exchange(i, j);
+                        }
+                    }
+                }
+            }
+        }
+
+        public void SortById(int id)
+        {
+            int log = Alumnos.Length - 1;
+            bool control = false;
+            if (id == 4)
+            {
+                while (control == false)
+                {
+                    control = true;
+                    for (int i = 0; i < log; i++)
+                    {
+                        if (Alumnos[i].Peso > Alumnos[i + 1].Peso)
+                        {
+                            Persona aux = Alumnos[i];
+                            Alumnos[i] = Alumnos[i + 1];
+                            Alumnos[i + 1] = aux;
+                            control = false;
+                        }
+                    }
+
+                }
+
+            }
+            if (id == 5)
+            {
+                while (control == false)
+                {
+                    control = true;
+                    for (int i = 0; i < log; i++)
+                    {
+                        if (Alumnos[i].Estatura > Alumnos[i + 1].Estatura)
+                        {
+                            Persona aux = Alumnos[i];
+                            Alumnos[i] = Alumnos[i + 1];
+                            Alumnos[i + 1] = aux;
+                            control = false;
+                        }
+                    }
+
+                }
+            }
+            if (id == 6)
+            {
+                while (control == false)
+                {
+                    control = true;
+                    for (int i = 0; i < log; i++)
+                    {
+                        if (Alumnos[i].AnioNacimiento > Alumnos[i + 1].AnioNacimiento)
+                        {
+                            Persona aux = Alumnos[i];
+                            Alumnos[i] = Alumnos[i + 1];
+                            Alumnos[i + 1] = aux;
+                            control = false;
+                        }
+                    }
+
+                }
+            }
+        }
     }
 }

@@ -217,8 +217,59 @@ namespace ARREGLOS_DE_OBJETOS
                         Console.Clear();
                         break;
                     case 8:
+                        Console.WriteLine("ORDENAR");
+                        Console.WriteLine("[1]_ORDENAR POR NOMBRE (A-Z)");
+                        Console.WriteLine("[2]_ORDENAR POR APELLIDO PATERNO (A-Z)");
+                        Console.WriteLine("[3]_ORDENAR POR APELLIDO MATERNO (A-Z)");
+                        Console.WriteLine("[4]_ORDENAR POR PESO");
+                        Console.WriteLine("[5]_ORDENAR POR ESTATURA");
+                        Console.WriteLine("[6]_ORDENAR POR FECHA DE NACIMIENTO");
+                        Console.Write("SELECCIONE UNA OPCIÓN: ");
+                        id = Convert.ToInt32(Console.ReadLine());
+                        if (id == 1)
+                        {
+                            Consultas.Select();
+                            Console.WriteLine("ORDENAR POR NOMBRE");
+                            Consultas.SortByText(id, -1);
+                        }
+                        else if (id == 2)
+                        {
+                            Consultas.Select();
+                            Console.WriteLine("ORDENAR POR APELLIDO PATERNO");
+                            Consultas.SortByText(id, -1);
+                        }
+                        else if (id == 3)
+                        {
+                            Consultas.Select();
+                            Console.WriteLine("ORDENAR POR APELLIDO MATERNO");
+                            Consultas.SortByText(id, -1);
+                        }
+                        else if (id == 4)
+                        {
+                            Consultas.Select();
+                            Console.WriteLine("ORDENAR POR PESO");
+                            Consultas.SortById(id);
+                        }
+                        else if (id == 5)
+                        {
+                            Consultas.Select();
+                            Console.WriteLine("ORDENAR POR ESTATURA");
+                            Consultas.SortById(id);
+                        }
+                        else if (id == 6)
+                        {
+                            Consultas.Select();
+                            Console.WriteLine("ORDENAR POR FECHA");
+                            Consultas.SortById(id);
+                        }
+                        Consultas.Select();
+                        Console.WriteLine("PRESIONE CUALQUIER TECLA PARA CONTINUAR");
+                        Console.ReadKey();
+                        Console.Clear();
                         break;
                     case 9:
+                        Console.WriteLine("BYE");
+                        control = 9;
                         break;
                     default:
                         Console.Clear();
